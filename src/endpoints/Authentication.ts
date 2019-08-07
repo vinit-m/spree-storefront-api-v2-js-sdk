@@ -1,5 +1,5 @@
 import { POST } from '../constants'
-import { authParams, refreshParams } from '../helpers/auth'
+import { authParams, refreshParams, registerParams } from '../helpers/auth'
 import Http from '../Http'
 import { AuthTokenAttr, RefreshTokenAttr, RegisterAttr } from '../interfaces/Authentication'
 import { ITokenResult } from '../interfaces/Token'
@@ -13,6 +13,6 @@ export default class Authentication extends Http {
     return await this.spreeResponse(POST, Routes.oauthTokenPath(), {}, refreshParams(params)) as ITokenResult
   }
   public async registerUser(params: RegisterAttr): Promise<ITokenResult> {
-    return await this.spreeResponse(POST, Routes.registerPath(), {}, params) as ITokenResult
+    return await this.spreeResponse(POST, Routes.registerPath(), {}, registerParams(params)) as ITokenResult
   }
 }

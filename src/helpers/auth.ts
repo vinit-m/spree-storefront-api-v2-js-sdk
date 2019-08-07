@@ -8,3 +8,7 @@ export const refreshParams = ({ refresh_token }) => ({
   refresh_token,
   grant_type: 'refresh_token'
 })
+
+export const registerParams = (params) => ({
+ user: {...params}
+})
