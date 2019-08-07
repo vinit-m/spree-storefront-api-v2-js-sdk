@@ -5,7 +5,6 @@ export interface AuthTokenAttr {
 export interface RefreshTokenAttr {
     refresh_token: string;
 }
-
 export interface RegisterAttr {
     email: string;
     password: string;
