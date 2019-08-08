@@ -1,7 +1,12 @@
 import { POST, PUT } from '../constants'
 import { authParams, refreshParams, registerParams } from '../helpers/auth'
 import Http from '../Http'
-import { AuthTokenAttr, ForgetPasswordAttr, RefreshTokenAttr, RegisterAttr, ResetPasswordAttr, UpdatePasswordAttr } from '../interfaces/Authentication'
+import { AuthTokenAttr,
+  ForgetPasswordAttr,
+  RefreshTokenAttr,
+  RegisterAttr,
+  ResetPasswordAttr,
+  UpdatePasswordAttr } from '../interfaces/Authentication'
 import {  IToken, ITokenResult } from '../interfaces/Token'
 import { Routes } from '../routes'
 
