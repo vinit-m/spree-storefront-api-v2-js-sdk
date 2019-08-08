@@ -37,6 +37,6 @@ export const Routes = {
   // Reset Password API route
   resetPasswordPath: () => `password/reset`,
   // Change Password API route
-  changePasswordPath: () => `password/update`,
+  updatePasswordPath: () => `password/update`,
 
 }

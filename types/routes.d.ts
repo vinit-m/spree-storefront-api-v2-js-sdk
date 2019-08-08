@@ -31,5 +31,5 @@ export declare const Routes: {
     orderStatusPath: (orderNumber: string) => string;
     forgetPasswordPath: () => string;
     resetPasswordPath: () => string;
-    changePasswordPath: () => string;
+    updatePasswordPath: () => string;
 };

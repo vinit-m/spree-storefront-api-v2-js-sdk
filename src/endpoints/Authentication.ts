@@ -1,8 +1,8 @@
-import { POST } from '../constants'
+import { POST, PUT } from '../constants'
 import { authParams, refreshParams, registerParams } from '../helpers/auth'
 import Http from '../Http'
-import { AuthTokenAttr, ForgetPasswordAttr, RefreshTokenAttr, RegisterAttr } from '../interfaces/Authentication'
-import { ITokenResult } from '../interfaces/Token'
+import { AuthTokenAttr, ForgetPasswordAttr, RefreshTokenAttr, RegisterAttr, ResetPasswordAttr, UpdatePasswordAttr } from '../interfaces/Authentication'
+import {  IToken, ITokenResult } from '../interfaces/Token'
 import { Routes } from '../routes'
 
 export default class Authentication extends Http {
@@ -21,6 +21,11 @@ export default class Authentication extends Http {
     return await this.spreeResponse(POST, Routes.forgetPasswordPath(), {}, params) as ITokenResult
   }
   // Reset Password API
-
-  // Change Password API
+  public async resetPassword(params: ResetPasswordAttr): Promise<ITokenResult> {
+    return await this.spreeResponse(POST, Routes.resetPasswordPath(), {}, params) as ITokenResult
+  }
+  // Update Password API
+  public async updatePassword(token: IToken, params: UpdatePasswordAttr): Promise<ITokenResult> {
+    return await this.spreeResponse(PUT, Routes.updatePasswordPath(), token, params) as ITokenResult
+  }
 }

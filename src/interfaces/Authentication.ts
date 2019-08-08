@@ -17,3 +17,14 @@ export interface RegisterAttr {
 export interface ForgetPasswordAttr {
   email: string
 }
+
+export interface ResetPasswordAttr {
+  token: string
+  password: string
+}
+
+export interface UpdatePasswordAttr {
+  password: string
+  new_password: string
+  password_confirmation: string
+}
