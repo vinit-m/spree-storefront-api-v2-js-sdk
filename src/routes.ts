@@ -31,5 +31,12 @@ export const Routes = {
   accountDefaultCreditCardPath: () => `${storefrontPath}/account/credit_cards/default`,
   accountCompletedOrdersPath: () => `${storefrontPath}/account/orders`,
   accountCompletedOrderPath: (orderNumber: string) => `${storefrontPath}/account/orders/${orderNumber}`,
-  orderStatusPath: (orderNumber: string) => `${storefrontPath}/order_status/${orderNumber}`
+  orderStatusPath: (orderNumber: string) => `${storefrontPath}/order_status/${orderNumber}`,
+  // Forget Password API route
+  forgetPasswordPath: () => `password/forgot`,
+  // Reset Password API route
+  resetPasswordPath: () => `password/reset`,
+  // Change Password API route
+  changePasswordPath: () => `password/update`,
+
 }

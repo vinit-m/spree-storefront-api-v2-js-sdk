@@ -13,3 +13,7 @@ export interface RegisterAttr {
   first_name: string
   last_name: string
 }
+
+export interface ForgetPasswordAttr {
+  email: string
+}

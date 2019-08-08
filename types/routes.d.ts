@@ -29,4 +29,7 @@ export declare const Routes: {
     accountCompletedOrdersPath: () => string;
     accountCompletedOrderPath: (orderNumber: string) => string;
     orderStatusPath: (orderNumber: string) => string;
+    forgetPasswordPath: () => string;
+    resetPasswordPath: () => string;
+    changePasswordPath: () => string;
 };
