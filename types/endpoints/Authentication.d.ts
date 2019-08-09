@@ -8,4 +8,5 @@ export default class Authentication extends Http {
     forgotPassword(params: ForgetPasswordAttr): Promise<ITokenResult>;
     resetPassword(params: ResetPasswordAttr): Promise<ITokenResult>;
     updatePassword(token: IToken, params: UpdatePasswordAttr): Promise<ITokenResult>;
+    deleteAccount(token: IToken): Promise<ITokenResult>;
 }

@@ -24,7 +24,7 @@ export const Routes = {
   checkoutPaymentMethodsPath: () => `${storefrontPath}/checkout/payment_methods`,
   checkoutShippingMethodsPath: () => `${storefrontPath}/checkout/shipping_rates`,
   oauthTokenPath: () => `spree_oauth/token`,
-  // Register API route
+  // Register API route, Delete Account
   registerPath: () => `user_account`,
   accountPath: () => `${storefrontPath}/account`,
   accountCreditCardsPath: () => `${storefrontPath}/account/credit_cards`,

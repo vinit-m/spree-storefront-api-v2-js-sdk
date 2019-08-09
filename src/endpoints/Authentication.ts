@@ -1,4 +1,4 @@
-import { POST, PUT } from '../constants'
+import { DELETE, POST, PUT } from '../constants'
 import { authParams, refreshParams, registerParams } from '../helpers/auth'
 import Http from '../Http'
 import { AuthTokenAttr,
@@ -32,5 +32,9 @@ export default class Authentication extends Http {
   // Update Password API
   public async updatePassword(token: IToken, params: UpdatePasswordAttr): Promise<ITokenResult> {
     return await this.spreeResponse(PUT, Routes.updatePasswordPath(), token, params) as ITokenResult
+  }
+  // Update Password API
+  public async deleteAccount(token: IToken): Promise<ITokenResult> {
+    return await this.spreeResponse(DELETE, Routes.registerPath(), token, {}) as ITokenResult
   }
 }
