@@ -30,6 +30,6 @@ export default class Account extends Http {
 
   // Account Info Update Path
   public async accountInfoUpdate(token: IToken, params: IQuery = {}): Promise<ITokenResult> {
-    return await this.spreeResponse(GET, Routes.accountInfoUpdatePath(), token, params) as ITokenResult
+    return await this.spreeResponse(POST, Routes.accountInfoUpdatePath(), token, params) as ITokenResult
   }
 }
