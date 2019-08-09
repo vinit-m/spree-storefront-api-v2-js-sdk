@@ -32,4 +32,5 @@ export declare const Routes: {
     forgetPasswordPath: () => string;
     resetPasswordPath: () => string;
     updatePasswordPath: () => string;
+    accountInfoUpdatePath: () => string;
 };

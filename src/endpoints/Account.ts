@@ -1,10 +1,10 @@
-import { GET } from '../constants'
+import { GET, POST } from '../constants'
 import Http from '../Http'
 import { IAccountResult } from '../interfaces/Account'
 import { ICreditCardResult, ICreditCardsResult } from '../interfaces/CreditCard'
 import { IOrderResult, IOrdersResult } from '../interfaces/Order'
 import { IQuery } from '../interfaces/Query'
-import { IToken } from '../interfaces/Token'
+import { IToken, ITokenResult } from '../interfaces/Token'
 import { Routes } from '../routes'
 
 export default class Account extends Http {
@@ -26,5 +26,10 @@ export default class Account extends Http {
 
   public async completedOrder(token: IToken, orderNumber: string, params: IQuery = {}): Promise<IOrderResult> {
     return await this.spreeResponse(GET, Routes.accountCompletedOrderPath(orderNumber), token, params) as IOrderResult
+  }
+
+  // Account Info Update Path
+  public async accountInfoUpdate(token: IToken, params: IQuery = {}): Promise<ITokenResult> {
+    return await this.spreeResponse(GET, Routes.accountInfoUpdatePath(), token, params) as ITokenResult
   }
 }

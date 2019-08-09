@@ -38,5 +38,6 @@ export const Routes = {
   resetPasswordPath: () => `password/reset`,
   // Change Password API route
   updatePasswordPath: () => `password/update`,
-
+  // Update User Info API
+  accountInfoUpdatePath: () => `${storefrontPath}/account/edit`,
 }
