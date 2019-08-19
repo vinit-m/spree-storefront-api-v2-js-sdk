@@ -9,7 +9,7 @@ export default class Address extends Http {
 
     // get Address API
     public async get(token: IToken): Promise<ITokenResult> {
-        return await this.spreeResponse(GET, Routes.addressPath(), token, {}) as ITokenResult
+        return await this.spreeResponse(GET, Routes.addressPath(), token ) as ITokenResult
     }
     // Add Address API
     public async add(token: IToken, params: AddAddressAttr): Promise<ITokenResult> {
