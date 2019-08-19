@@ -40,4 +40,6 @@ export const Routes = {
   updatePasswordPath: () => `password/update`,
   // Update User Info API
   accountInfoUpdatePath: () => `${storefrontPath}/account/edit`,
+  // Address API
+  addressPath: () => `addresses`,
 }

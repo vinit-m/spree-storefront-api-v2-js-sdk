@@ -1,4 +1,5 @@
 import Account from './endpoints/Account'
+import Address from './endpoints/Address'
 import Authentication from './endpoints/Authentication'
 import Cart from './endpoints/Cart'
 import Checkout from './endpoints/Checkout'
@@ -12,6 +13,7 @@ export interface IClientConfig {
 }
 
 class Client {
+  public address: Address
   public products: Products
   public taxons: Taxons
   public countries: Countries
@@ -36,6 +38,7 @@ class Client {
     this.order = new Order(this.host)
     this.products = new Products(this.host)
     this.taxons = new Taxons(this.host)
+    this.address = new Address(this.host)
   }
 }
 

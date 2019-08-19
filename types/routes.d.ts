@@ -33,4 +33,5 @@ export declare const Routes: {
     resetPasswordPath: () => string;
     updatePasswordPath: () => string;
     accountInfoUpdatePath: () => string;
+    addressPath: () => string;
 };
