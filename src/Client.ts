@@ -1,6 +1,7 @@
 import Account from './endpoints/Account'
 import Address from './endpoints/Address'
 import Authentication from './endpoints/Authentication'
+import Braintree from './endpoints/Braintree'
 import Cart from './endpoints/Cart'
 import Checkout from './endpoints/Checkout'
 import Countries from './endpoints/Countries'
@@ -14,6 +15,7 @@ export interface IClientConfig {
 
 class Client {
   public address: Address
+  public braintree: Braintree
   public products: Products
   public taxons: Taxons
   public countries: Countries
@@ -39,6 +41,7 @@ class Client {
     this.products = new Products(this.host)
     this.taxons = new Taxons(this.host)
     this.address = new Address(this.host)
+    this.braintree = new Braintree(this.host)
   }
 }
 

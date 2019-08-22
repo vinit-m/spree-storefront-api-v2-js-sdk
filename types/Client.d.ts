@@ -1,6 +1,7 @@
 import Account from './endpoints/Account';
 import Address from './endpoints/Address';
 import Authentication from './endpoints/Authentication';
+import Braintree from './endpoints/Braintree';
 import Cart from './endpoints/Cart';
 import Checkout from './endpoints/Checkout';
 import Countries from './endpoints/Countries';
@@ -12,6 +13,7 @@ export interface IClientConfig {
 }
 declare class Client {
     address: Address;
+    braintree: Braintree;
     products: Products;
     taxons: Taxons;
     countries: Countries;

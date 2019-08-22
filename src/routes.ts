@@ -38,8 +38,10 @@ export const Routes = {
   resetPasswordPath: () => `password/reset`,
   // Change Password API route
   updatePasswordPath: () => `password/update`,
-  // Update User Info API
+  // Update User Info API route
   accountInfoUpdatePath: () => `${storefrontPath}/account/edit`,
-  // Address API
+  // Address API route
   addressPath: () => `addresses`,
+  // Braintree client token API route
+  braintreeClient: () => 'api/v1/braintree_client_token',
 }
