@@ -44,4 +44,6 @@ export const Routes = {
   addressPath: () => `addresses`,
   // Braintree client token API route
   braintreeClient: () => 'api/v1/braintree_client_token',
+  // User Downloads API route
+  downloads: () => `${storefrontPath}/account/downloads`,
 }

@@ -35,4 +35,5 @@ export declare const Routes: {
     accountInfoUpdatePath: () => string;
     addressPath: () => string;
     braintreeClient: () => string;
+    downloads: () => string;
 };
