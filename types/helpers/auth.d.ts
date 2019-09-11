@@ -1,6 +1,7 @@
-export declare const authParams: ({ username, password }: {
+export declare const authParams: ({ username, password, orderToken }: {
     username: any;
     password: any;
+    orderToken?: string;
 }) => {
     username: any;
     password: any;

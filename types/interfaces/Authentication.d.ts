@@ -1,6 +1,7 @@
 export interface AuthTokenAttr {
     username: string;
     password: string;
+    orderToken?: string;
 }
 export interface RefreshTokenAttr {
     refresh_token: string;

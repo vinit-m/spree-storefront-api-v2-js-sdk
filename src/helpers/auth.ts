@@ -1,8 +1,11 @@
-export const authParams = ({ username, password }) => ({
-  username,
-  password,
-  grant_type: 'password'
-})
+export const authParams = ({ username, password, orderToken = '' }) => {
+  const payload = { username, password, grant_type: 'password' }
+  if (orderToken.length) {
+    const key = 'orderToken'
+    payload[key] = orderToken
+  }
+  return payload
+}
 
 export const refreshParams = ({ refresh_token }) => ({
   refresh_token,
