@@ -1,6 +1,7 @@
 import { GET, POST } from '../constants'
+import { getDownloadLinkParams } from '../helpers/account'
 import Http from '../Http'
-import { IAccountResult } from '../interfaces/Account'
+import { DownloadLinkAttr, IAccountResult } from '../interfaces/Account'
 import { ICreditCardResult, ICreditCardsResult } from '../interfaces/CreditCard'
 import { IOrderResult, IOrdersResult } from '../interfaces/Order'
 import { IQuery } from '../interfaces/Query'
@@ -33,8 +34,13 @@ export default class Account extends Http {
     return await this.spreeResponse(POST, Routes.accountInfoUpdatePath(), token, params) as ITokenResult
   }
 
-  //User Downloads
+  // User Downloads
   public async downloads(token: IToken, params: IQuery = {}): Promise<ITokenResult> {
     return await this.spreeResponse(GET, Routes.downloads(), token, params) as ITokenResult
+  }
+
+  // Get Download Link
+  public async getDownloadLink(token: IToken, params: DownloadLinkAttr): Promise<ITokenResult> {
+    return await this.spreeResponse(GET, getDownloadLinkParams(params), token, {}) as ITokenResult
   }
 }

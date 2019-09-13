@@ -2,6 +2,10 @@ import { JsonApiDocument, JsonApiSingleResponse } from './JsonApi'
 import { IRelationships } from './Relationships'
 import { ResultResponse } from './ResultResponse'
 
+export interface DownloadLinkAttr {
+  url: string
+}
+
 export interface AccountAttr extends JsonApiDocument {
   data: {
     id: string

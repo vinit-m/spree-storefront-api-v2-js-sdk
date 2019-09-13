@@ -1,5 +1,5 @@
 import Http from '../Http';
-import { IAccountResult } from '../interfaces/Account';
+import { DownloadLinkAttr, IAccountResult } from '../interfaces/Account';
 import { ICreditCardResult, ICreditCardsResult } from '../interfaces/CreditCard';
 import { IOrderResult, IOrdersResult } from '../interfaces/Order';
 import { IQuery } from '../interfaces/Query';
@@ -12,4 +12,5 @@ export default class Account extends Http {
     completedOrder(token: IToken, orderNumber: string, params?: IQuery): Promise<IOrderResult>;
     accountInfoUpdate(token: IToken, params?: IQuery): Promise<ITokenResult>;
     downloads(token: IToken, params?: IQuery): Promise<ITokenResult>;
+    getDownloadLink(token: IToken, params: DownloadLinkAttr): Promise<ITokenResult>;
 }
