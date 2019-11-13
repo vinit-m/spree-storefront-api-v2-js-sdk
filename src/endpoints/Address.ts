@@ -7,7 +7,7 @@ import { Routes } from '../routes'
 
 export default class Address extends Http {
 
-    // get Address API
+    // Get Address API
     public async get(token: IToken): Promise<ITokenResult> {
         return await this.spreeResponse(GET, Routes.addressPath(), token ) as ITokenResult
     }
@@ -18,6 +18,10 @@ export default class Address extends Http {
     // Update Address API
     public async update(token: IToken, params: AddAddressAttr): Promise<ITokenResult> {
         return await this.spreeResponse(PUT, Routes.addressPath(), token, addAddressParams(params)) as ITokenResult
+    }
+    // Update Tax Zone API
+    public async updateTaxZone(token: IToken): Promise<ITokenResult> {
+        return await this.spreeResponse(GET, Routes.updateTaxZone(), token ) as ITokenResult
     }
 
 }

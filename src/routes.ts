@@ -42,6 +42,8 @@ export const Routes = {
   accountInfoUpdatePath: () => `${storefrontPath}/account/edit`,
   // Address API route
   addressPath: () => `addresses`,
+  // Update Tax Zone API route
+  updateTaxZone: () => `set_tax_zone`,
   // Braintree client token API route
   braintreeClient: () => 'api/v1/braintree_client_token',
   // User Downloads API route

@@ -5,4 +5,5 @@ export default class Address extends Http {
     get(token: IToken): Promise<ITokenResult>;
     add(token: IToken, params: AddAddressAttr): Promise<ITokenResult>;
     update(token: IToken, params: AddAddressAttr): Promise<ITokenResult>;
+    updateTaxZone(token: IToken): Promise<ITokenResult>;
 }

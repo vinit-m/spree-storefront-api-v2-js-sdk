@@ -34,6 +34,7 @@ export declare const Routes: {
     updatePasswordPath: () => string;
     accountInfoUpdatePath: () => string;
     addressPath: () => string;
+    updateTaxZone: () => string;
     braintreeClient: () => string;
     downloads: () => string;
 };
