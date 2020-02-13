@@ -48,4 +48,6 @@ export const Routes = {
   braintreeClient: () => 'api/v1/braintree_client_token',
   // User Downloads API route
   downloads: () => `${storefrontPath}/account/downloads`,
+  // Payment Fail API route
+  paymentFailedPath: () => `${storefrontPath}/cart/partial_payment_failed`,
 }

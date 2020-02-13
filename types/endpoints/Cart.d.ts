@@ -14,4 +14,5 @@ export default class Cart extends Http {
     applyCouponCode(token: IToken, params: CouponCode): Promise<IOrderResult>;
     removeCouponCode(token: IToken, code?: string, params?: IQuery): Promise<IOrderResult>;
     estimateShippingMethods(token: IToken, params: EstimateShippingMethods): Promise<IEstimatedShippingMethodsResult>;
+    paymentFailed(token?: IToken, params?: IQuery): Promise<IOrderResult>;
 }

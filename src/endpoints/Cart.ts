@@ -55,4 +55,8 @@ export default class Cart extends Http {
       GET, Routes.cartEstimateShippingMethodsPath(), token, params
     ) as IEstimatedShippingMethodsResult
   }
+
+  public async paymentFailed(token?: IToken, params: IQuery = {}): Promise<IOrderResult> {
+    return await this.spreeResponse(POST, Routes.paymentFailedPath(), token, params) as IOrderResult
+  }
 }

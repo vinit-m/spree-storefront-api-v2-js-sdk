@@ -37,4 +37,5 @@ export declare const Routes: {
     updateTaxZone: () => string;
     braintreeClient: () => string;
     downloads: () => string;
+    paymentFailedPath: () => string;
 };
