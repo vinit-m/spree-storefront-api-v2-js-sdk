@@ -49,5 +49,5 @@ export const Routes = {
   // User Downloads API route
   downloads: () => `${storefrontPath}/account/downloads`,
   // Payment Fail API route
-  paymentFailedPath: () => `${storefrontPath}/cart/partial_payment_failed`,
+  paymentFailedPath: () => `${storefrontPath}/cart/payment_failed`,
 }
