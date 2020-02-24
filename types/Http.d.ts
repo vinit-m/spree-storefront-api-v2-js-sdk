@@ -4,8 +4,9 @@ import { ResultResponse } from './interfaces/ResultResponse';
 import { IToken } from './interfaces/Token';
 export default class Http {
     host: string;
+    timeout: number;
     axios: AxiosInstance;
-    constructor(host?: string);
+    constructor(host?: string, timeout?: number);
     protected spreeResponse(method: string, route: string, tokens?: IToken, params?: any): Promise<ResultResponse<JsonApiResponse>>;
     /**
      * HTTP error code returned by Spree is not indicative of its response shape. This function attempts to figure out the

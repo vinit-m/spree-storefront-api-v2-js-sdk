@@ -12,13 +12,16 @@ import { IToken } from './interfaces/Token'
 
 export default class Http {
   public host: string
+  public timeout: number
   public axios: AxiosInstance
 
-  constructor(host?: string) {
+  constructor(host?: string, timeout?: number) {
     this.host = host || process.env.SPREE_HOST || 'http://localhost:3000/'
+    this.timeout = timeout || 0
 
     this.axios = Axios.create({
       baseURL: this.host,
+      timeout: this.timeout,
       headers: {
         'Content-Type': 'application/json'
       },

@@ -10,6 +10,7 @@ import Products from './endpoints/Products';
 import Taxons from './endpoints/Taxons';
 export interface IClientConfig {
     host?: string;
+    timeout?: number;
 }
 declare class Client {
     address: Address;
@@ -23,6 +24,7 @@ declare class Client {
     account: Account;
     order: Order;
     private host?;
+    private timeout?;
     constructor(config?: IClientConfig);
     private addEndpoints;
 }
