@@ -12,6 +12,8 @@ import Taxons from './endpoints/Taxons'
 export interface IClientConfig {
   host?: string
   timeout?: number
+  onSuccess?: (response: any) => void
+  onError?: (error: any) => void
 }
 
 class Client {
@@ -27,24 +29,28 @@ class Client {
   public order: Order
   private host?: string
   private timeout?: number
+  private onSuccess?: (response: any) => void
+  private onError?: (error: any) => void
 
   constructor(config: IClientConfig = {}) {
     this.host = config.host || null
     this.timeout = config.timeout || null
+    this.onSuccess = config.onSuccess || null
+    this.onError = config.onSuccess || null
     this.addEndpoints()
   }
 
   private addEndpoints() {
-    this.account = new Account(this.host, this.timeout)
-    this.authentication = new Authentication(this.host, this.timeout)
-    this.cart = new Cart(this.host, this.timeout)
-    this.checkout = new Checkout(this.host, this.timeout)
-    this.countries = new Countries(this.host, this.timeout)
-    this.order = new Order(this.host, this.timeout)
-    this.products = new Products(this.host, this.timeout)
-    this.taxons = new Taxons(this.host, this.timeout)
-    this.address = new Address(this.host, this.timeout)
-    this.braintree = new Braintree(this.host, this.timeout)
+    this.account = new Account(this.host, this.timeout, this.onSuccess, this.onError)
+    this.authentication = new Authentication(this.host, this.timeout, this.onSuccess, this.onError)
+    this.cart = new Cart(this.host, this.timeout, this.onSuccess, this.onError)
+    this.checkout = new Checkout(this.host, this.timeout, this.onSuccess, this.onError)
+    this.countries = new Countries(this.host, this.timeout, this.onSuccess, this.onError)
+    this.order = new Order(this.host, this.timeout, this.onSuccess, this.onError)
+    this.products = new Products(this.host, this.timeout, this.onSuccess, this.onError)
+    this.taxons = new Taxons(this.host, this.timeout, this.onSuccess, this.onError)
+    this.address = new Address(this.host, this.timeout, this.onSuccess, this.onError)
+    this.braintree = new Braintree(this.host, this.timeout, this.onSuccess, this.onError)
   }
 }
 

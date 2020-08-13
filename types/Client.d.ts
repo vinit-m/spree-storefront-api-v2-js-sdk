@@ -11,6 +11,8 @@ import Taxons from './endpoints/Taxons';
 export interface IClientConfig {
     host?: string;
     timeout?: number;
+    onSuccess?: (response: any) => void;
+    onError?: (error: any) => void;
 }
 declare class Client {
     address: Address;
@@ -25,6 +27,8 @@ declare class Client {
     order: Order;
     private host?;
     private timeout?;
+    private onSuccess?;
+    private onError?;
     constructor(config?: IClientConfig);
     private addEndpoints;
 }
