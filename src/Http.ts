@@ -15,7 +15,7 @@ export default class Http {
   public timeout: number
   public axios: AxiosInstance
 
-  constructor(host?: string, timeout?: number) {
+  constructor(host?: string, timeout?: number, onSuccess?: (response: any) => void, onError?: (error: any) => void) {
     this.host = host || process.env.SPREE_HOST || 'http://localhost:3000/'
     this.timeout = timeout || 0
 
@@ -28,6 +28,22 @@ export default class Http {
       paramsSerializer: (params) => {
         return qs.stringify(params, { arrayFormat: 'brackets' })
       }
+    })
+
+    this.axios.interceptors.response.use( (response) => {
+      // Any status code that lie within the range of 2xx cause this function to trigger
+      // Do something with response data
+      if (onSuccess) {
+        onSuccess(response)
+      }
+      return response
+    }, (error) => {
+      // Any status codes that falls outside the range of 2xx cause this function to trigger
+      // Do something with response error
+      if (onError) {
+        onError(error)
+      }
+      Promise.reject(error)
     })
   }
 
