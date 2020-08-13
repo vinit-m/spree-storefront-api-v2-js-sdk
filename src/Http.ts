@@ -43,7 +43,7 @@ export default class Http {
       if (onError) {
         onError(error)
       }
-      Promise.reject(error)
+      return Promise.reject(error)
     })
   }
 
