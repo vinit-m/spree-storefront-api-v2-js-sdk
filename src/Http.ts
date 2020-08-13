@@ -34,14 +34,22 @@ export default class Http {
       // Any status code that lie within the range of 2xx cause this function to trigger
       // Do something with response data
       if (onSuccess) {
-        onSuccess(response)
+        try {
+          onSuccess(response)
+        } catch (e) {
+          console.log(e)
+        }
       }
       return response
     }, (error) => {
       // Any status codes that falls outside the range of 2xx cause this function to trigger
       // Do something with response error
       if (onError) {
+        try {
         onError(error)
+        } catch (e) {
+          console.log(e)
+        }
       }
       return Promise.reject(error)
     })
