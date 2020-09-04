@@ -38,4 +38,5 @@ export declare const Routes: {
     braintreeClient: () => string;
     downloads: () => string;
     paymentFailedPath: () => string;
+    affiliateIdVerifyPath: (affiliateId: string) => string;
 };

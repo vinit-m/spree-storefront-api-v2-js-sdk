@@ -7,6 +7,7 @@ import Checkout from './endpoints/Checkout'
 import Countries from './endpoints/Countries'
 import Order from './endpoints/Order'
 import Products from './endpoints/Products'
+import Reaffiliate from './endpoints/Reaffiliate'
 import Taxons from './endpoints/Taxons'
 
 export interface IClientConfig {
@@ -27,6 +28,7 @@ class Client {
   public authentication: Authentication
   public account: Account
   public order: Order
+  public reaffiliate: Reaffiliate
   private host?: string
   private timeout?: number
   private onSuccess?: (response: any) => void
@@ -51,6 +53,7 @@ class Client {
     this.taxons = new Taxons(this.host, this.timeout, this.onSuccess, this.onError)
     this.address = new Address(this.host, this.timeout, this.onSuccess, this.onError)
     this.braintree = new Braintree(this.host, this.timeout, this.onSuccess, this.onError)
+    this.reaffiliate = new Reaffiliate(this.host, this.timeout, this.onSuccess, this.onError)
   }
 }
 

@@ -50,4 +50,6 @@ export const Routes = {
   downloads: () => `${storefrontPath}/account/downloads`,
   // Payment Fail API route
   paymentFailedPath: () => `${storefrontPath}/cart/payment_failed`,
+  //  Verify Affiliate Code
+  affiliateIdVerifyPath: (affiliateId: string) => `affiliate/${affiliateId}`,
 }

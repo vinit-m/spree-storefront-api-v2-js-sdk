@@ -7,6 +7,7 @@ import Checkout from './endpoints/Checkout';
 import Countries from './endpoints/Countries';
 import Order from './endpoints/Order';
 import Products from './endpoints/Products';
+import Reaffiliate from './endpoints/Reaffiliate';
 import Taxons from './endpoints/Taxons';
 export interface IClientConfig {
     host?: string;
@@ -25,6 +26,7 @@ declare class Client {
     authentication: Authentication;
     account: Account;
     order: Order;
+    reaffiliate: Reaffiliate;
     private host?;
     private timeout?;
     private onSuccess?;
