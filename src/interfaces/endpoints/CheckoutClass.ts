@@ -17,4 +17,5 @@ export interface NestedAttributes extends IQuery {
     shipments_attributes?: IShipment[]
   },
   payment_source?: IPaymentSource
+  affiliate_code?: string
 }
