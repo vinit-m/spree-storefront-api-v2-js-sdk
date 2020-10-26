@@ -52,4 +52,8 @@ export const Routes = {
   paymentFailedPath: () => `${storefrontPath}/cart/payment_failed`,
   //  Verify Affiliate Code
   affiliateIdVerifyPath: (affiliateId: string) => `affiliate/${affiliateId}`,
+  //  Confirm Payment route
+  confirmPayment: () => `${storefrontPath}/checkout/payment_confirm`,
+  //  Handle Response route
+  handleResponse: () => `${storefrontPath}/checkout/handle_response`,
 }

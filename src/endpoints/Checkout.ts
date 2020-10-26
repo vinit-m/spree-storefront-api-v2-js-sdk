@@ -1,11 +1,11 @@
 import { GET, PATCH, POST } from '../constants'
 import Http from '../Http'
-import { AddStoreCredit, NestedAttributes } from '../interfaces/endpoints/CheckoutClass'
+import { AddStoreCredit, HandleResponse, NestedAttributes } from '../interfaces/endpoints/CheckoutClass'
 import { IOrderResult } from '../interfaces/Order'
 import { IPaymentMethodsResult } from '../interfaces/PaymentMethod'
 import { IQuery } from '../interfaces/Query'
 import { IShippingMethodsResult } from '../interfaces/ShippingMethod'
-import { IToken } from '../interfaces/Token'
+import {IToken, ITokenResult} from '../interfaces/Token'
 import { Routes } from '../routes'
 
 export default class Checkout extends Http {
@@ -39,5 +39,13 @@ export default class Checkout extends Http {
 
   public async shippingMethods(token: IToken, params: IQuery = {}): Promise<IShippingMethodsResult> {
     return await this.spreeResponse(GET, Routes.checkoutShippingMethodsPath(), token, params) as IShippingMethodsResult
+  }
+
+  public async confirmPayment(token: IToken, params: IQuery = {}): Promise<ITokenResult> {
+    return await this.spreeResponse(PATCH, Routes.confirmPayment(), token, params) as ITokenResult
+  }
+
+  public async handleResponse(token: IToken, params: HandleResponse): Promise<ITokenResult> {
+    return await this.spreeResponse(PATCH, Routes.handleResponse(), token, params) as ITokenResult
   }
 }

@@ -39,4 +39,6 @@ export declare const Routes: {
     downloads: () => string;
     paymentFailedPath: () => string;
     affiliateIdVerifyPath: (affiliateId: string) => string;
+    confirmPayment: () => string;
+    handleResponse: () => string;
 };

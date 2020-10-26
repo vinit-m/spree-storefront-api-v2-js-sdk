@@ -19,3 +19,7 @@ export interface NestedAttributes extends IQuery {
   payment_source?: IPaymentSource
   affiliate_code?: string
 }
+
+export interface HandleResponse  extends IQuery {
+  response: any
+}
