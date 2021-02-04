@@ -2,6 +2,7 @@ export interface AuthTokenAttr {
   username: string
   password: string
   orderToken?: string
+  campaign_code?: string
 }
 
 export interface RefreshTokenAttr {
@@ -13,6 +14,7 @@ export interface RegisterAttr {
   password: string
   first_name: string
   last_name: string
+  campaign_code?: string
 }
 
 export interface ForgetPasswordAttr {
