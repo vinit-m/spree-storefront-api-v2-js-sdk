@@ -1,8 +1,10 @@
-export declare const authParams: ({ username, password, orderToken, campaign_code }: {
+export declare const authParams: ({ username, password, orderToken, campaign_code, cookie_id, cookies_data }: {
     username: any;
     password: any;
     orderToken?: string;
     campaign_code?: string;
+    cookie_id?: string;
+    cookies_data?: any[];
 }) => {
     username: any;
     password: any;

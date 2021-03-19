@@ -3,6 +3,8 @@ export interface AuthTokenAttr {
     password: string;
     orderToken?: string;
     campaign_code?: string;
+    cookie_id?: string;
+    cookies_data?: [string];
 }
 export interface RefreshTokenAttr {
     refresh_token: string;
